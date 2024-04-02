@@ -22,6 +22,7 @@
                             @csrf
                             <div class="container">
                                 <div class="row justify-content-center align-items-center g-2">
+
                                     <div class="col">
                                         <div class="mb-3">
                                           <label for="codigo" class="form-label">Codigo</label>
@@ -30,7 +31,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
-                                            <label for="destino" class="form-label">Destino</label>
+                                            <label for="destino" class="form-label">Cliente/Destino</label>
                                             <input type="text" name="destino" id="" class="form-control" placeholder="" aria-describedby="helpId">
                                         </div>
                                     </div>
@@ -100,7 +101,8 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                
+                                
                                 <div class="row justify-content-center align-items-center g-2">
                                     <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">Registrar</button>

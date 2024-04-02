@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Canastilla;
 
 class Entrega extends Model
 {
@@ -41,8 +42,8 @@ class Entrega extends Model
     public function mercados(): BelongsTo
     {   return $this->BelongsTo(Mercado::class,'mercado_id');   }
 
-    public function detalles():HasMany
+    public function canastillas():BelongsToMany
     {
-        return $this->hasMany(Detalle::class,'entrega_id');
+        return $this->belongsToMany(Canastilla::class)->withPivot('cantidad');
     }
 }

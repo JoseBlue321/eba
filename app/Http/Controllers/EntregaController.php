@@ -36,12 +36,14 @@ class EntregaController extends Controller
         $departamento = Departamento::all();
         $tipoventa = Tipoventa::all();
         $mercado = Mercado::all();
+        $canastillas = Canastilla::all();
         return view('entregas/create',[
             'origenes'=>$origen,
             'transportadoras'=>$transportadora,
             'departamentos'=>$departamento,
             'tipoventas'=>$tipoventa,
             'mercados'=>$mercado,
+            'canastillas'=>$canastillas,
         ]);
     }
 
@@ -50,6 +52,7 @@ class EntregaController extends Controller
      */
     public function store(Request $request)
     {
+        //return $request;
         $request->validate([
             'codigo'=>['required','integer'],
             'fecha_emision',
@@ -72,8 +75,10 @@ class EntregaController extends Controller
             'tipoventa_id'=>$request->input('tipoventa_id'),
             'mercado_id'=>$request->input('mercado_id'),
         ]);
-        //$entrega->productos()->attach($request->input('producto_id'));
-        return to_route('entregas.index'); 
+        $cantidad = $request->input('cantidad');
+        $canastillas = $request->input('canastilla_id');
+        $entrega->canastillas()->attach($canastillas,['cantidad'=>$cantidad]);
+        return to_route('entrega'); 
     }
 
     public function show(string $id)

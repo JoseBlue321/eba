@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Canastilla extends Model
 {
@@ -21,8 +22,8 @@ class Canastilla extends Model
         'caracteristicas'
     ];
 
-    public function detalles(): HasMany
+    public function entregas():BelongsToMany
     {
-        return $this->hasMany(Detalle::class,'canastilla_id');
+        return $this->belongsToMany(Entrega::class)->withPivot('cantidad');
     }
 }

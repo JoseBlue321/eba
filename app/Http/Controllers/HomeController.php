@@ -31,12 +31,14 @@ class HomeController extends Controller
         $departamento = Departamento::all();
         $tipoventa = Tipoventa::all();
         $mercado = Mercado::all();
+        $canastillas = Canastilla::all();
         return view('entregas/create',[
             'origenes'=>$origen,
             'transportadoras'=>$transportadora,
             'departamentos'=>$departamento,
             'tipoventas'=>$tipoventa,
             'mercados'=>$mercado,
+            'canastillas'=>$canastillas,
         ]);
     }
     

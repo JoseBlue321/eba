@@ -20,10 +20,10 @@
                                     <th>destion</th>
                                     <th>Origen</th>
                                     <th>Transportadora</th>
-                                    <th>departamento</th>
-                                    <th>TIpo Ventas</th>
-                                    <th>Mercados</th>
-                                    <th>Canastillas</th>
+                                    <th>Estado</th>
+                                    <th>Ver</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
                                 </thead>
                                 <tbody>
                                     @foreach ($entregas as $entrega)
@@ -34,25 +34,10 @@
                                         <td>{{$entrega->destino}}</td>
                                         <td>{{$entrega->origenes->nombre}}</td>
                                         <td>{{$entrega->transportadoras->nombre}}</td>
-                                        <td>{{$entrega->departamentos->nombre}}</td>
-                                        <td>{{$entrega->tipoventas->nombre}}</td>
-                                        <td>{{$entrega->mercados->nombre}}</td>
-                                        <td>
-                                            <table class="table">
-                                                <tbody>
-                                                    @foreach ($entrega->detalles as $detalle)
-                                                    <tr>
-                                                        <td>
-                                                            {{$detalle->canastillas->nombre}}
-                                                        </td>
-                                                        <td>
-                                                            {{$detalle->cantidad}}
-                                                        </td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </td>
+                                        <td></td>
+                                        <td><a class="btn btn-info" href="#" role="button">Ver</a></td>
+                                        <td><a class="btn btn-success" href="#" role="button">Editar</a></td>
+                                        <td><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

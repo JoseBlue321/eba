@@ -7,7 +7,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <!--****************DASHBOARD**********************-->
-                    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     @include('partials.head')
 <body>
@@ -17,7 +17,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center align-items-center g-2">
                     <div class="col">
-                        Home
+
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
     </main>
 
     @include('partials.js')
-   </body>
+</body>
 </html>
                     <!--**************************************-->
                 </div>

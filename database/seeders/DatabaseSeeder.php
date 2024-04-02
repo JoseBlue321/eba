@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             MercadoSeeder::class,
             EntregaSeeder::class,
             CanastillaSeeder::class,
-            DetalleSeeder::class,
+            //DetalleSeeder::class,
         ]);
     }
 }
